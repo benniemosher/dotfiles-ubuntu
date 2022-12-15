@@ -70,6 +70,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 rcup -v -d $HOME/Code/dotfiles -x .git -x README.md -x .gitignore -x bin -x Brewfile -x LICENSE -x nord.sh
 ```
 
+### Install needed gems
+
+```bash
+gem install lolcat artii fortune cowsay
+```
+
 ### Download Nord Colors
 
 ```bash
