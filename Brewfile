@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "romkatv/powerlevel10k"
 brew "gcc"
 brew "vim"
 brew "zsh-completions"
+brew "romkatv/powerlevel10k/powerlevel10k"
