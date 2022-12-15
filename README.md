@@ -58,6 +58,8 @@ chsh -s $(which zsh)
 ```
 
 ### Install oh-my-zsh
+
+``bash
 # SEE: https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh for updated installation instructions
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
