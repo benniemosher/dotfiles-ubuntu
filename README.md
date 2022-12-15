@@ -43,13 +43,6 @@ mkdir -p $HOME/Code/
 git clone git@github.com:benniemosher/dotfiles-ubuntu.git $HOME/Code/dotfiles
 
 brew bundle --file=$HOME/Code/dotfiles/Brewfile
-rcup -v -d $HOME/Code/dotfiles -x .git -x README.md -x .gitignore -x bin -x Brewfile -x LICENSE
-```
-
-### Install oh-my-zsh
-# SEE: https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh for updated installation instructions
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ### To update Brewfile
@@ -64,9 +57,47 @@ brew bundle dump --force --file $HOME/Code/dotfiles/Brewfile
 chsh -s $(which zsh)
 ```
 
+### Install oh-my-zsh
+# SEE: https://github.com/ohmyzsh/ohmyzsh/wiki#welcome-to-oh-my-zsh for updated installation instructions
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Sync config files
+```bash
+rcup -v -d $HOME/Code/dotfiles -x .git -x README.md -x .gitignore -x bin -x Brewfile -x LICENSE -x nord.sh
+```
+
 ### Download Nord Colors
 
 ```bash
-curl -o Nord.itermcolors https://raw.githubusercontent.com/arcticicestudio/nord-iterm2/master/src/xml/Nord.itermcolors
-curl -o Nord.terminal https://raw.githubusercontent.com/arcticicestudio/nord-terminal-app/master/src/xml/Nord.terminal
+curl -o $HOME/Code/dotfiles/nord.sh https://raw.githubusercontent.com/arcticicestudio/nord-gnome-terminal/develop/src/nord.sh
+```
+
+In `Terminal` click on the hamburger menu, then click on Preferences. On the left hand column of the new screen, press the drop-down arrow next to `Nord` then click "Set as default".
+
+### Install VIM plugins
+
+```bash
+vim ~
+
+:PlugInstall
+```
+
+### Install Keybase
+
+```bash
+cd $HOME/Downloads
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt install ./keybase_amd64.deb
+run_keybase
+```
+
+### Install GPG and Keybase keys
+
+```bash
+keybase login
+keybase pgp list
+keybase pgp export -q <ID_FROM_ABOVE> | gpg --import
+keybase pgp export -q <ID_FROM_ABOVE> --secret | gpg --allow-secret-key-import --import
 ```
