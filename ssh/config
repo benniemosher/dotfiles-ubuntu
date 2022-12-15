@@ -1,0 +1,5 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  User git
+  IdentityFile ~/.ssh/id_ed25519
